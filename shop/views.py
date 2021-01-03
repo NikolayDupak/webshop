@@ -26,3 +26,12 @@ def product_detail(request, id, slug):
     return render(request, 'shop/product/detail.html', {'product': product,
                                                         'cart_product_form': cart_product_form})
 
+
+def info(request):
+    return render(request, 'shop/info.html')
+
+def contacts(request):
+    return render(request, 'shop/contacts.html')
+
+def feedback(request):
+    return render(request, 'shop/feedback.html')
