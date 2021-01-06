@@ -346,3 +346,13 @@ form div.field {
     color:#666;
     border-radius:4px;
 }
+.text_info {
+
+	display: inline-block;
+	color: blue;
+	font-size: 21px;
+
+	margin: 0 0 0 1%;
+
+    left: 20px;
+	}

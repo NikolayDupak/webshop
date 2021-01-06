@@ -5,4 +5,17 @@
 {% endblock %}
 {% block content %}
     <h1> Обратная связь</h1>
+    <div class="login">
+		<form class="text_info" >
+			<p>почта</p>
+			<input type="email" name="email" required>
+			<p>Имя</p>
+			<input type="text" name="fio" required>
+			<p>Сообщение</p>
+			<textarea  cols="50" rows="12" required></textarea>
+			<br>
+			<input class="button" type="submit" value="Отправить" >
+
+		</form>
+	</div>
 {% endblock %}
