@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Shop.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -87,7 +87,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -107,6 +106,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'nikolayd765@gmail.com'
+EMAIL_HOST_PASSWORD = 'mon/:;12'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+# Настройки Braintree.
+BRAINTREE_MERCHANT_ID = 'XXX'  # ID продавца.
+BRAINTREE_PUBLIC_KEY = 'XXX'  # Публичный ключ.
+BRAINTREE_PRIVATE_KEY = 'XXX'  # Секретный ключ.
+from braintree import Configuration, Environment
+
+Configuration.configure(
+    Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -120,7 +140,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

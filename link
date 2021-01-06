@@ -1,1 +1,4 @@
 https://github.com/PacktPublishing/Django-2-by-Example
+
+
+uwsgi --socket Shop.sock --module Shop.wsgi --chmod-socket=664
