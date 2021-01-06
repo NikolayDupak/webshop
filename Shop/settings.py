@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '1q%1l!5fbkct1@$9l##p#!giqcc9lg9kgtuqv%5*@!mgb045(%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['178.154.246.63']
 
 CART_SESSION_ID = 'cart'
 # Application definition
