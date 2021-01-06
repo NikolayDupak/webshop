@@ -137,6 +137,24 @@ ul.errorlist {
     margin-right:10%;
 }
 
+#header .menu {
+    font-family: 'Ubuntu', sans-serif;
+    color: #5993bb;
+    font-size:18px;
+    margin-right:4%;
+    // background-color: #5922bb;
+}
+#header .menu:hover {
+    font-family: 'Ubuntu', sans-serif;
+    color: blue;
+    font-size:18px;
+    margin-right:4%;
+    // background-color: #5922bb;
+}
+
+
+
+
 #subheader .cart {
     float:right;
     padding-top:4px;

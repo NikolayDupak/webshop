@@ -20,8 +20,13 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.static import static
 
+from shop.views import info, contacts, feedback
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('info/', info),
+    path('contacts/', contacts),
+    path('feedback/', feedback),
+    # url(r'^info/', include(('shop.urls', 'info'), namespace='info')),
     url(r'^cart/', include(('cart.urls', 'cart'), namespace='cart')),
     url(r'^orders/', include(('orders.urls', 'orders'), namespace='orders')),
     url(r'^', include(('shop.urls', 'shop'), namespace='shop')),
